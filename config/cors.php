@@ -5,7 +5,7 @@ return [
     'allowed_methods' => ['*'],
 
     // Cambia por tu URL de front (Vite por defecto):
-    'allowed_origins' => ['http://localhost:5173'],
+    'allowed_origins' => ['http://localhost:5173', 'https://logiafrontend-production.up.railway.app'],
 
     'allowed_origins_patterns' => [],
     'allowed_headers' => ['*'],
@@ -14,5 +14,5 @@ return [
 
     // Si usas cookies de Sanctum (SPA con sesión), déjalo en true.
     // Si vas con Bearer tokens, puede ser false.
-    'supports_credentials' => true,
+    'supports_credentials' => false,
 ];
