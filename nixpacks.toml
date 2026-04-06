@@ -8,8 +8,9 @@ cmds = ["composer install --no-dev --optimize-autoloader"]
 cmds = [
   "php artisan config:cache",
   "php artisan route:cache",
-  "php artisan view:cache"
+  "php artisan view:cache",
+  "chmod +x start.sh"
 ]
 
 [start]
-cmd = "until php -r \"new PDO('mysql:host=$DB_HOST;port=$DB_PORT;dbname=$DB_DATABASE', '$DB_USERNAME', '$DB_PASSWORD');\"; do echo 'Esperando MySQL...'; sleep 3; done && php artisan migrate --force && php artisan storage:link && php artisan serve --host=0.0.0.0 --port=$PORT"
+cmd = "bash start.sh"
