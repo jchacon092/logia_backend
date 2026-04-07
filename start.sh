@@ -26,4 +26,4 @@ php artisan cache:clear
 
 echo "Iniciando servidor en puerto $PORT..."
 php artisan config:cache
-php artisan serve --host=0.0.0.0 --port=$PORT
+exec php -S 0.0.0.0:$PORT -t public public/index.php
