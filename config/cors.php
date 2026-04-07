@@ -5,7 +5,7 @@ return [
     'allowed_methods' => ['*'],
 
     // Cambia por tu URL de front (Vite por defecto):
-    'allowed_origins' => ['http://localhost:5173', 'https://logiafrontend-production.up.railway.app'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
     'allowed_headers' => ['*'],
