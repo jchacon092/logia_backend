@@ -11,10 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware) {
-        // Si usas CORS nativo (opcional):
-        // $middleware->append(\Illuminate\Http\Middleware\HandleCors::class);
-    })
+->withMiddleware(function (Middleware $middleware) {
+    $middleware->statefulApi();
+    $middleware->api(prepend: [
+        \Illuminate\Http\Middleware\HandleCors::class,
+    ]);
+})
     ->withExceptions(function (Exceptions $exceptions) {
         // Puedes dejarlo vacío
     })
